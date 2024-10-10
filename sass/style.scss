@@ -11,19 +11,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 31w
 */
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
+@import "variables/couleurs";
+// @import "normalize/normalize";
+// @import "normalize/box-sizing";
 
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: aquamarine;
-}
+//_ --------------------------------------------- base _/
+@import "base/heading";
+@import "base/espacement";
+@import "base/lien";
+@import "base/list";
 
-p {
-  max-width: 80ch;
-}
+//_ --------------------------------------------- composant _/
+@import "composant/entete";

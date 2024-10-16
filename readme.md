@@ -1,4 +1,4 @@
-# projet de sission 3 du cours 31w
+# projet de session 3 du cours 31w
 
 ## introduction à un systeme de gestion de contenu
 

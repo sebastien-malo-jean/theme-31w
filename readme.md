@@ -1,4 +1,4 @@
-# projet de session 3 du cours 31w
+# projet de sission 3 du cours 31w
 
 ## introduction à un systeme de gestion de contenu
 
@@ -8,4 +8,8 @@
 - document les conceptes de base
 - ajouter les references qui ont permis de solutionné certain problemes.
 
-## exercice-2
+## exercice-1
+
+### objectif : realiser un theme de base
+
+- auteur : Sébastien Malo Jean

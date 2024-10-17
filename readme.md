@@ -1,16 +1,10 @@
-# projet de sission 3 du cours 31w
+# projet de session 3 du cours 31w
 
-## introduction à un systeme de gestion de contenu
+## introduction à un système de gestion de contenu
 
-### objectif du theme
+### exercice-1
 
-- vous aide a realiser votre propre theme
-- document les conceptes de base
-- ajouter les references qui ont permis de solutionné certain problemes.
-
-## exercice-1
-
-### objectif : realiser un theme de base
+#### objectif : realiser un theme de base
 
 1. Développer un thème de base pour Wordpress
 
@@ -42,4 +36,4 @@
 
 Un minimum de 5 commits permettront d'évaluer l'évolution de votre projet.
 
-- auteur : Sébastien Malo Jean
+auteur : Sébastien Malo Jean

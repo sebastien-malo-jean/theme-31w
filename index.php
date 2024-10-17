@@ -37,9 +37,9 @@
             <h3><?php echo get_the_title() ?></h3>
             <article>
                 <?php the_content() ?>
-                <?php  echo wp_trim_words(get_the_excerpt(), 20, null) ?>
+                <?php  echo wp_trim_words(get_the_excerpt(), 20, null); ?>
             </article>
-            <?php endwhile ?>
+            <?php endwhile; ?>
         </section>
     </main>
     <footer class="pied">

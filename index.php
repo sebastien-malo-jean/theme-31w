@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="entete">
         <section class="global">
             <h1>31w</h1>
             <nav>
@@ -32,14 +32,14 @@
     <main class="principal">
         <section class="global">
             <h2>Accueil</h2>
-            <?php if (have_posts()) ?>
+            <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post() ?>
-            <h3><?php echo get_the_title() ?></h3>
-            <article>
-                <?php the_content() ?>
+            <article class="principal__article">
+                <h3><?= get_the_title() ?></h3>
                 <?php  echo wp_trim_words(get_the_excerpt(), 20, null); ?>
             </article>
             <?php endwhile; ?>
+            <?php endif ?>
         </section>
     </main>
     <footer class="pied">

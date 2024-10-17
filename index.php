@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <section class="global">
             <h1>31w</h1>
             <nav>
@@ -29,22 +29,28 @@
             </form>
         </section>
     </header>
-    <main>
+    <main class="principal">
         <section class="global">
             <h2>Accueil</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi quod architecto cumque
-                repellendus ut necessitatibus nesciunt minus soluta porro excepturi natus voluptatem veritatis dolorum
-                aspernatur nostrum fugit reprehenderit maiores dignissimos quisquam exercitationem perferendis
-                voluptatum. Ducimus dolore ex non tempora corporis ad animi veniam magni optio! Voluptate repellat
-                expedita libero?</p>
+            <?php if (have_posts()) ?>
+            <?php while (have_posts()) : the_post() ?>
+            <h3><?php echo get_the_title() ?></h3>
+            <article>
+                <?php the_content() ?>
+                <?php  echo wp_trim_words(get_the_excerpt(), 20, null) ?>
+            </article>
+            <?php endwhile ?>
         </section>
     </main>
-    <footer>
+    <footer class="pied">
         <section class="global">
             <div>lien 1</div>
             <div>lien 2</div>
             <div>lien 3</div>
         </section>
+        <?php
+            wp_footer();
+        ?>
     </footer>
 </body>
 

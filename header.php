@@ -16,13 +16,18 @@
     <header class="entete">
         <section class="global">
             <h1><?php bloginfo('name')?></h1>
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li><a href="">Accueil</a></li>
                     <li><a href="">À propos</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
-            </nav>
+            </nav> -->
+            <?php
+                wp_nav_menu(array(
+                                        "menu" => "principal",
+                                        "container" => "nav"
+                                    )); ?>
             <form action="" class="recherche">
                 <input type="search" name="" id="">
                 <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="32" height="32">

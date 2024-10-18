@@ -29,16 +29,6 @@
         <?php endif ?>
     </section>
 </main>
-<footer class="pied">
-    <section class="global">
-        <div>lien 1</div>
-        <div>lien 2</div>
-        <div>lien 3</div>
-    </section>
-    <?php
-            wp_footer();
-        ?>
-</footer>
-</body>
-
-</html>
+<?php
+    get_footer();
+?>

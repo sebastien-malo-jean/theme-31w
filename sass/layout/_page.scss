@@ -14,4 +14,10 @@
 }
 .pied {
   background-color: violet;
+  & .pied__global {
+    display: flex;
+    & p {
+      max-width: fit-content;
+    }
+  }
 }

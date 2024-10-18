@@ -183,13 +183,6 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -270,7 +263,6 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
@@ -369,24 +361,36 @@ p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  min-width: 100%;
+}
+
 .principal .global {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .principal__article {
   border: 1px solid black;
+  max-width: 300px;
+  padding: 1rem;
 }
 
 .global {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
 .entete {
-  background-color: aqua;
+  background-color: darkslateblue;
 }
 
 .principal {

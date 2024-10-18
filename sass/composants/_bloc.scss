@@ -1,9 +1,12 @@
 .principal .global {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .principal__article {
   border: 1px solid black;
+  max-width: 300px;
+  padding: 1rem;
 }

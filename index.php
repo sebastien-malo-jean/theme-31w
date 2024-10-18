@@ -34,9 +34,15 @@
             <h2>Accueil</h2>
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post() ?>
+            <?php
+                $chaine = get_the_title();
+                $sigle = substr($chaine,0,7);
+                $titre = substr($chaine, 8,80);
+            ?>
             <article class="principal__article">
-                <h3><?= get_the_title() ?></h3>
-                <?php  echo wp_trim_words(get_the_excerpt(), 20, null); ?>
+                <h5><?= $sigle ?></h5>
+                <small><?= $titre ?></small>
+                <p><?php  echo wp_trim_words(get_the_excerpt(), 30, null); ?></p>
             </article>
             <?php endwhile; ?>
             <?php endif ?>

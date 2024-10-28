@@ -1,51 +1,34 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta name="author" content="Sebastien Malo Jean">
-    <meta name="description" content="">
-    <meta charset='UTF-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>31w</title>
-    <?php
-        wp_head();
-    ?>
-</head>
-
-<body>
-    <header>
-        <section class="global">
-            <h1>31w</h1>
-            <nav>
-                <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">À propos</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </nav>
-            <form action="" class="recherche">
-                <input type="search" name="" id="">
-                <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="32" height="32">
-            </form>
-        </section>
-    </header>
-    <main>
-        <section class="global">
-            <h2>Accueil</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi quod architecto cumque
-                repellendus ut necessitatibus nesciunt minus soluta porro excepturi natus voluptatem veritatis dolorum
-                aspernatur nostrum fugit reprehenderit maiores dignissimos quisquam exercitationem perferendis
-                voluptatum. Ducimus dolore ex non tempora corporis ad animi veniam magni optio! Voluptate repellat
-                expedita libero?</p>
-        </section>
-    </main>
-    <footer>
-        <section class="global">
-            <div>lien 1</div>
-            <div>lien 2</div>
-            <div>lien 3</div>
-        </section>
-    </footer>
-</body>
-
-</html>
+<?php
+    get_header();
+?>
+<main class="principal">
+    <section class="global">
+        <h2>Accueil</h2>
+        <div class="principal__conteneur">
+            <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post() ?>
+            <?php
+                $chaine = get_the_title();
+                $sigle = substr($chaine,0,7);
+                $titre = substr($chaine, 8,stripos($chaine,"(")-8);
+            ?>
+            <article class="principal__article">
+                <h5><?= $sigle ?></h5>
+                <h6><?= $titre ?></h6>
+                <p><?php  echo wp_trim_words(get_the_excerpt(), 30, null); ?></p>
+                <?php
+                    $pos_ouvrante = stripos($chaine, "(");
+                    if ($pos_ouvrante !== false) {
+                        $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
+                    }
+                ?>
+                <small>(<?= $heureDemandé ?>)</small>
+            </article>
+            <?php endwhile; ?>
+        </div>
+        <?php endif ?>
+    </section>
+</main>
+<?php
+    get_footer();
+?>

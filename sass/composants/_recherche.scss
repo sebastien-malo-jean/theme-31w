@@ -1,0 +1,25 @@
+/*
+<div class="entete__search_form">
+                <form class="recherche" role="search" method="get" action="http://localhost/htdocs/intro-gc/31w/">
+    <label class="recherche__label">
+        <input class="recherche__input" type="search" placeholder="Search..." value="" name="s">
+    </label>
+    <button class="recherche__bouton" type="submit">
+        <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&amp;color=000" width="20" height="20">
+    </button>
+</form>            </div>
+*/
+.entete__search_form {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+}
+
+.recherche {
+  border: 1px solid black;
+}
+
+.recherche__label {
+  width: fit-content;
+}

@@ -7,9 +7,3 @@
 - vous aide a realiser votre propre theme
 - document les conceptes de base
 - ajouter les references qui ont permis de solutionné certain problemes.
-
-## exercice-1
-
-### objectif : realiser un theme de base
-
-- auteur : Sébastien Malo Jean

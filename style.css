@@ -340,6 +340,7 @@ h6 {
 
 P {
   font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
+  max-width: 80ch;
 }
 
 h1 {
@@ -384,9 +385,18 @@ h6 {
 
 .principal__article {
   border: 1px solid black;
-  max-width: 300px;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.principal__article:first-child,
+.principal__article + .principal__article {
+  max-width: 300px;
+}
+
+/* Style pour un .principal__article unique (sans frères) */
+.principal__article:only-child {
+  max-width: 100%;
 }
 
 .entete__nav {
@@ -403,18 +413,34 @@ h6 {
 }
 
 .menu-item {
-  background-color: rgba(255, 255, 255, 0.6);
   max-width: fit-content;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
 }
 .menu-item a {
-  color: black;
-  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  color: #efefee;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.25s;
 }
-.menu-item a:visited {
+.menu-item a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: white;
+  scale: 1 0;
+  z-index: -1;
+  transition: 0.45s;
+  border-radius: 10px;
+}
+.menu-item a:hover {
   color: black;
+}
+.menu-item a:hover::after {
+  scale: 1 1;
 }
 
 /*
@@ -428,6 +454,12 @@ h6 {
     </button>
 </form>            </div>
 */
+.principal__recherche {
+  border: 1px solid black;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 .entete__search_form {
   display: flex;
   width: 100%;
@@ -436,11 +468,25 @@ h6 {
 }
 
 .recherche {
+  display: flex;
   border: 1px solid black;
+  width: 50%;
+  height: 2rem;
 }
-
-.recherche__label {
-  width: fit-content;
+.recherche .recherche__label {
+  flex: 1;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+}
+.recherche .recherche__label .recherche__input {
+  flex: 1;
+  max-width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .global {

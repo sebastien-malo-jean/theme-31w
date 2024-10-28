@@ -7,7 +7,16 @@
 
 .principal__article {
   border: 1px solid black;
-  max-width: 300px;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.principal__article:first-child,
+.principal__article + .principal__article {
+  max-width: 300px;
+}
+
+/* Style pour un .principal__article unique (sans frères) */
+.principal__article:only-child {
+  max-width: 100%;
 }

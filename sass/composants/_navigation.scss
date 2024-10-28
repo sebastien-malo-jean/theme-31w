@@ -11,16 +11,34 @@
 }
 
 .menu-item {
-  background-color: rgba(255, 255, 255, 0.6);
   max-width: fit-content;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
   & a {
-    color: black;
-    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    color: #efefee;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
   }
-  & a:visited {
+  & a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: white;
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 10px;
+  }
+
+  & a:hover {
     color: black;
+  }
+
+  & a:hover::after {
+    scale: 1 1;
   }
 }

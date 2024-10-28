@@ -19,6 +19,7 @@ h6 {
 
 P {
   font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
+  max-width: 80ch;
 }
 
 h1 {

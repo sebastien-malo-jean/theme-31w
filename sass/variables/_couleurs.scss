@@ -1,0 +1,22 @@
+:root {
+  --couleur1: #1a421c;
+  --couleur2: #26db2f;
+  --couleur3: #8dd690;
+}
+
+$couleur1: var(--couleur1);
+$couleur2: var(--couleur2);
+$couleur3: var(--couleur3);
+
+@mixin applique_couleur($selecteur, $couleur) {
+  #{$selecteur} {
+    color: #{$couleur};
+  }
+}
+
+@mixin applique_bg-color_color($selecteur, $couleurA, $couleurB) {
+  #{$selecteur} {
+    background-color: #{$couleurA};
+    color: #{$couleurB};
+  }
+}

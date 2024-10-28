@@ -6,15 +6,9 @@
   padding: 20px;
 }
 
-.entete {
-  background-color: darkslateblue;
-}
-
-.principal {
-  background-color: blueviolet;
-}
+@include applique_bg-color_color(".entete", $couleur1, $couleur2);
+@include applique_bg-color_color(".principal", $couleur3, $couleur1);
 .pied {
-  background-color: violet;
   & .pied__global {
     display: flex;
     & p {
@@ -22,3 +16,4 @@
     }
   }
 }
+@include applique_bg-color_color(".pied", $couleur1, $couleur2);

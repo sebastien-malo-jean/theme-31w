@@ -376,6 +376,12 @@ h6 {
   max-height: 50px;
 }
 
+:root {
+  --couleur1: #1a421c;
+  --couleur2: #26db2f;
+  --couleur3: #8dd690;
+}
+
 .principal__conteneur {
   display: flex;
   justify-content: center;
@@ -423,7 +429,7 @@ h6 {
   position: relative;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.5);
-  color: #efefee;
+  color: var(--couleur2);
   padding: 0.5rem 1rem;
   transition: color 0.25s;
   transition: background-color 0.25s;
@@ -432,14 +438,14 @@ h6 {
   position: absolute;
   content: "";
   inset: 0;
-  background-color: white;
+  background-color: var(--couleur2);
   scale: 1 0;
   z-index: -1;
   transition: 0.45s;
   border-radius: 10px;
 }
 .menu-item a:hover {
-  color: black;
+  color: var(--couleur1);
   background-color: rgba(255, 255, 255, 0.8);
 }
 .menu-item a:hover::after {
@@ -500,19 +506,23 @@ h6 {
 }
 
 .entete {
-  background-color: darkslateblue;
+  background-color: var(--couleur1);
+  color: var(--couleur2);
 }
 
 .principal {
-  background-color: blueviolet;
+  background-color: var(--couleur3);
+  color: var(--couleur1);
 }
 
-.pied {
-  background-color: violet;
-}
 .pied .pied__global {
   display: flex;
 }
 .pied .pied__global p {
   max-width: fit-content;
+}
+
+.pied {
+  background-color: var(--couleur1);
+  color: var(--couleur2);
 }/*# sourceMappingURL=style.css.map */

@@ -388,15 +388,11 @@ h6 {
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-.principal__article:first-child,
-.principal__article + .principal__article {
-  max-width: 300px;
-}
-
-/* Style pour un .principal__article unique (sans frères) */
 .principal__article:only-child {
-  max-width: 100%;
+  width: fit-content;
+}
+.principal__article:not(:only-child):first-child, .principal__article:not(:only-child) + .principal__article {
+  width: 300px;
 }
 
 .entete__nav {
@@ -404,27 +400,33 @@ h6 {
   align-items: center;
 }
 
-.menu {
+.menu-menu-container {
+  width: 100%;
+}
+.menu-menu-container .menu {
+  padding-inline-start: 0px;
   display: flex;
-  max-width: fit-content;
-  gap: 0.8rem;
-  list-style-type: none;
-  padding-inline-start: 0;
+  justify-content: space-around;
+  list-style: none;
 }
 
 .menu-item {
+  padding-inline-start: 0;
+  display: flex;
+  justify-content: space-around;
   max-width: fit-content;
-  border-radius: 8px;
   padding: 5px;
   text-align: center;
 }
 .menu-item a {
+  border-radius: 8px;
   position: relative;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
   color: #efefee;
-  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   transition: color 0.25s;
+  transition: background-color 0.25s;
 }
 .menu-item a::after {
   position: absolute;
@@ -438,6 +440,7 @@ h6 {
 }
 .menu-item a:hover {
   color: black;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .menu-item a:hover::after {
   scale: 1 1;

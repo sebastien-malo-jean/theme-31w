@@ -9,14 +9,17 @@
   border: 1px solid black;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
-}
 
-.principal__article:first-child,
-.principal__article + .principal__article {
-  max-width: 300px;
-}
+  // Applique 100% de largeur si l'article est unique
+  &:only-child {
+    width: fit-content;
+  }
 
-/* Style pour un .principal__article unique (sans frères) */
-.principal__article:only-child {
-  max-width: 100%;
+  // Applique une largeur de 300px aux autres articles
+  &:not(:only-child) {
+    &:first-child,
+    & + .principal__article {
+      width: 300px;
+    }
+  }
 }

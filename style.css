@@ -562,7 +562,7 @@ h6 {
   transition: transform 0.3s ease;
 }
 .pied .pied__global .range2 .colonne2 .pied__img-frame img:hover {
-  transform: scale(1.05);
+  transform: scale(2);
 }
 
 .pied {

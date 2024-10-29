@@ -30,7 +30,7 @@
 
                 <a href="https://www.cmaisonneuve.qc.ca" class="pied__img-frame">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY52p9xHQBK5npgsurkiQvfStx-8Tb3O6R-g&s"
-                        alt="image X"></a>
+                        alt="college maisonneuve"></a>
 
             </div>
         </div>

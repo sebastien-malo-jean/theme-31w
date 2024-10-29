@@ -11,9 +11,46 @@
 .pied {
   & .pied__global {
     display: flex;
+    flex-direction: column;
     & p {
-      max-width: fit-content;
+      max-width: 80ch;
+    }
+    & .range2 {
+      display: flex;
+      gap: 50px;
+
+      & .colonne2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .pied__img-frame {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%; // Prend tout l'espace disponible horizontalement
+          max-width: 125px; // Limite la largeur maximale à 125px
+          height: auto;
+          max-height: 125px; // Limite la hauteur à 125px
+          overflow: hidden;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          margin-left: auto; // Aligne le cadre à droite dans colonne2
+
+          img {
+            width: 130%;
+            height: 130%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
     }
   }
 }
+
 @include applique_bg-color_color(".pied", $couleur1, $couleur2);

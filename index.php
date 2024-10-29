@@ -5,8 +5,6 @@
     <section class="global">
         <h2>index</h2>
         <div class="principal__conteneur">
-            <?php// if (have_posts()) : ?>
-            <?php// while (have_posts()) : the_post() ?>
             <?php
                 $chaine = get_the_title();
                 $sigle = substr($chaine,0,7);

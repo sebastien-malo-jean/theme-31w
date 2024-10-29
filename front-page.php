@@ -4,6 +4,7 @@
 <main class="principal">
     <section class="global">
         <h2>Front Page</h2>
+
         <div class="principal__conteneur">
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post() ?>
@@ -12,16 +13,21 @@
                 $sigle = substr($chaine,0,7);
                 $titre = substr($chaine, 8,stripos($chaine,"(")-8);
             ?>
+
             <article class="principal__article">
-                <h5><a href="<?= the_permalink() ?>"><?= $sigle . " " . $titre ?></a></h5>
-                <?php
-                    $pos_ouvrante = stripos($chaine, "(");
-                    if ($pos_ouvrante !== false) {
-                        $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
-                    }
-                ?>
-                <small><strong>(<?= $heureDemandé ?>)</strong></small>
-                <p><?php  echo wp_trim_words(get_the_excerpt(), 30, null); ?></p>
+                <a href="<?= the_permalink() ?>" class="article-link">
+                    <h5><?= $sigle . " " . $titre ?></h5>
+                    <?php
+            // Extraction de l'heure demandée
+            $pos_ouvrante = stripos($chaine, "(");
+            if ($pos_ouvrante !== false) {
+                $pos_fermante = strrpos($chaine, ")");
+                $heureDemandé = substr($chaine, $pos_ouvrante + 1, $pos_fermante - $pos_ouvrante - 1);
+            }
+        ?>
+                    <small><strong>(<?= $heureDemandé ?>)</strong></small>
+                    <p><?php echo wp_trim_words(get_the_excerpt(), 30, null); ?></p>
+                </a>
             </article>
             <?php endwhile; ?>
         </div>

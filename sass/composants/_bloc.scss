@@ -9,17 +9,28 @@
   border: 1px solid black;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.3s ease;
 
-  // Applique 100% de largeur si l'article est unique
   &:only-child {
     width: fit-content;
   }
 
-  // Applique une largeur de 300px aux autres articles
   &:not(:only-child) {
     &:first-child,
     & + .principal__article {
       width: 300px;
     }
   }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  cursor: pointer;
+}
+
+.article-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }

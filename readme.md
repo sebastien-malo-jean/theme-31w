@@ -2,51 +2,46 @@
 
 ## introduction à un systeme de gestion de contenu
 
-### Objectifs de l’exercice #2
+### Objectifs de l’exercice #3
 
-1. Continuer d’améliorer notre thème
+1. Améliorer le thème existant
 
-2. Ajouter les modèles front-page.php, search.php
+2. Améliorer le modèle front-page.php
 
-3. Ajouter le gabarit searchform.php
+3. Ajouter les modèles category-cours.php et 404.php
 
-4. Ajouter de nouvelles règles de style dans le dossier Sass
+4. Ajouter un champ personnalisé aux articles de catégorie « Cours »
 
-5. Utilisation des variables CSS/Sass
+5. Ajouter de nouvelles règles de style dans le dossier Sass
 
-6. Utilisation des « Mixin »
+6. Utilisation des variables CSS/Sass
+
+7. Utilisation/ajout de « Mixin »
+
+8. Améliorer le design général du thème
 
 #### front-page.php
 
-1. Contiendra une boucle pour afficher les cours du département TIM du collège de maisonneuve.
+1. Permettra d’afficher les articles de catégorie « Nouvelle »
 
-2. Chaque bloc de cours affiche de façon indépendante:
+2. Pour afficher uniquement les article de catégorie « Nouvelle », il faut alterner la requête principal en utilisant le hook « pre_get_posts »
 
-- Le sigle
-- b. Le titre
-- c. Court résumé
-- d. La durée
-- e. En cliquant sur le bloc on accède au cours avec le modèle single.php
+#### category-cours.php
 
-#### search.php
+1- Affiche l’ensemble des cours du département TIM
 
-1. Modèle qui affiche le résultat de la recherche
+2- Le titre de la page correspond au titre qui a été associé à la catégorie cours
 
-2. Chaque élément de résultat contient :
+3- L’affichage de chaque cours contient le professeur responsable du cours
 
-- a. Est affiché sur une seule colonne.
-- b. Le titre de l’élément
-- c. Un court résumé moins de cent mots.
-- d. Un lien vers l’article
+#### 404.php
+
+1- Créer un modèle permettant d’afficher un message d’erreur
+
+2- Le modèle intègre l’entête et le pied-page comme les autres modèles
+
+3- A l’intérieur de la section principale, afficher une liste de l’ensemble des cours, en affichant uniquement le sigle sur 3 caractères uniquement du cours. Ex: 1W1, 2W2, 1J1, 2J2, 3J3, 5W5. Chaque sigle contient un lien permettant d’accéder à la description complète du cours.
 
 #### footer.php
 
-1. Contient 3 colonnes qui s’adaptent à la largeur de la fenêtre
-
-2. Colonne 1 : Titre du cours, titre du travail, auteur, un lien vers votre dépôt github,
-
-3. Colonne 2 : paragraphe résumant l’objectif de l’exercice et une image
-
-4. Colonne 3 : Zone de recherche, menu sur une colonne
-
-Un minimum de 5 commits permettront d'évaluer l'évolution de votre projet.
+1. Ajouter une nouvelle ligne à votre pied de page existant. La ligne contiendra une liste de liens permettant d’accéder au cours Web : 1w1, 2w2, 3w3, 4w4 et 5w5

@@ -20,7 +20,7 @@
             <div class="entete__nav">
                 <?php
                 wp_nav_menu(array(
-                                        "menu" => "principal",
+                                        "menu" => "menu",
                                         "container" => "nav"
                                     )); ?>
             </div>

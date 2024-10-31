@@ -4,7 +4,35 @@
 <main class="principal">
     <section class="global">
         <h2>404</h2>
+
         <div class="principal__conteneur">
+
+            <section class="blocflex">
+                <?php
+      $category = get_queried_object();
+      $args = array(
+         'category_name' => "cours",
+         'orderby' => 'title',
+         'order' => 'ASC'
+      );
+      $query = new WP_Query( $args );
+      if ( $query->have_posts() ) :
+         while ( $query->have_posts() ) : $query->the_post(); ?>
+                <article>
+                    <h2><a href="<?php the_permalink(); ?>"> <?= get_the_title(); ?></a></h2>
+                    <p><?= wp_trim_words(get_the_excerpt(), 15) ?></p>
+                </article>
+                <?php endwhile; ?>
+                <?php endif;
+      wp_reset_postdata();?>
+            </section>
+
+            <?php
+        wp_nav_menu(array("menu" => "erreur404",
+                            "container"=> "nav"
+));
+/*
+        
             <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post() ?>
             <?php
@@ -26,6 +54,8 @@
             <?php endwhile; ?>
         </div>
         <?php endif ?>
+
+        */?>
     </section>
 </main>
 <?php

@@ -1,15 +1,15 @@
 <footer class="pied">
     <section class="pied__global global">
         <div class="range1">
-            <div class="entete__search_form">
+            <div class="footer__search_form">
                 <?php
                 get_search_form();
             ?>
             </div>
-            <div class="entete__nav">
+            <div class="footer__nav">
                 <?php
                 wp_nav_menu(array(
-                                        "menu" => "principal",
+                                        "menu" => "footer",
                                         "container" => "nav"
                                     )); ?>
             </div>

@@ -1,13 +1,13 @@
-.entete__nav {
+.footer__nav {
   display: flex;
   align-items: center;
 }
-.menu-menu-container {
+.menu-footer-container {
   width: 100%;
   & .menu {
     padding-inline-start: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style: none;
   }
 }
@@ -15,6 +15,7 @@
 .menu-item {
   padding-inline-start: 0;
   display: flex;
+  justify-content: space-around;
   max-width: fit-content;
 
   padding: 5px;

@@ -362,15 +362,19 @@ p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
+a {
+  color: var(--couleur2);
+}
+
 .pied__logo {
   max-width: 100%;
   max-height: 50px;
 }
 
 :root {
-  --couleur1: #1a421c;
-  --couleur2: #26db2f;
-  --couleur3: #8dd690;
+  --couleur1: #1a3942;
+  --couleur2: #26a8db;
+  --couleur3: #8dd6d6;
 }
 
 .principal__conteneur {
@@ -418,6 +422,56 @@ p {
   width: 100%;
 }
 .menu-menu-container .menu {
+  padding-inline-start: 0px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.menu-item {
+  padding-inline-start: 0;
+  display: flex;
+  max-width: fit-content;
+  padding: 5px;
+  text-align: center;
+}
+.menu-item a {
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--couleur2);
+  padding: 0.5rem 1rem;
+  transition: color 0.25s;
+  transition: background-color 0.25s;
+}
+.menu-item a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--couleur2);
+  scale: 1 0;
+  z-index: -1;
+  transition: 0.45s;
+  border-radius: 10px;
+}
+.menu-item a:hover {
+  color: var(--couleur1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.menu-item a:hover::after {
+  scale: 1 1;
+}
+
+.footer__nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-footer-container {
+  width: 100%;
+}
+.menu-footer-container .menu {
   padding-inline-start: 0px;
   display: flex;
   justify-content: space-around;
@@ -529,6 +583,9 @@ p {
 }
 .pied .pied__global p {
   max-width: 80ch;
+}
+.pied .pied__global .range1 .footer__search_form {
+  align-self: center;
 }
 .pied .pied__global .range2 {
   display: flex;

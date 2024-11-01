@@ -3,28 +3,23 @@
 ?>
 <main class="principal">
     <section class="global">
-        <h2>category</h2>
-        <div class="principal__conteneur">
-            <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post() ?>
-            <?php
-                $chaine = get_the_title();
-                $sigle = substr($chaine,0,7);
-                $titre = substr($chaine, 8,stripos($chaine,"(")-8);
+        <?php $category = get_the_category() ?>
+        <h2><?=$category[0]->name ?></h2>
+        <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post() ?>
+        <?php
+            $chaine = get_the_title();
+            $sigle = substr($chaine,0,7);
+            $titre = substr($chaine, 8,stripos($chaine,"(")-8);
             ?>
-            <article class="principal__article">
-                <h5><a href="<?= the_permalink() ?>"><?= $sigle . " " . $titre ?></a></h5>
-                <p><?= get_the_content() ?></p>
-                <?php
-                    $pos_ouvrante = stripos($chaine, "(");
-                    if ($pos_ouvrante !== false) {
-                        $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
-                    } else {
-                        $heureDemandé = "";
-                    }
-                ?>
-                <small><?= $heureDemandé ?></small>
-            </article>
+        <div class="principal__conteneur">
+            <a href="<?= the_permalink() ?>">
+                <article class="principal__article">
+                    <h5><?= $sigle . " " . $titre ?></h5>
+                    <p><?= wp_trim_words(get_the_excerpt(), 50, null); ?></p>
+
+                </article>
+            </a>
             <?php endwhile; ?>
         </div>
         <?php endif ?>

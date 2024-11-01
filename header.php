@@ -29,9 +29,5 @@
                 get_search_form();
             ?>
             </div>
-            <!-- <form action="#" class="recherche">
-                <input type="search" name="" id="">
-                <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="32" height="32">
-            </form> -->
         </section>
     </header>

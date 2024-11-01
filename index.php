@@ -21,9 +21,7 @@
                 ?>
                 <small>(<?= $heureDemandé ?>)</small>
             </article>
-            <?php// endwhile; ?>
         </div>
-        <?php// endif ?>
     </section>
 </main>
 <?php

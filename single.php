@@ -3,8 +3,6 @@
 ?>
 <main class="principal">
     <section class="global">
-        <?php// if (have_posts()) : ?>
-        <?php// while (have_posts()) : the_post() ?>
         <?php
                 $chaine = get_the_title();
                 $sigle = substr($chaine,0,7);
@@ -13,19 +11,18 @@
         <h2><?=$titre?></h2>
         <div class="principal__conteneur">
             <article class="principal__article">
-                <h5><a href="<?= the_permalink() ?>"><?= $sigle?></a></h5>
+                <h5><?= $sigle?></h5>
+                <p>Professeur : <?= get_field("professeur") ?> </p>
                 <p><?= get_the_content() ?></p>
                 <?php
                     $pos_ouvrante = stripos($chaine, "(");
                     if ($pos_ouvrante !== false) {
                         $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
-                    }
+                        echo "(".$heureDemandé.")";
+                } else {$heureDemandé = "";}
                 ?>
-                <small>(<?= $heureDemandé ?>)</small>
             </article>
-            <?php// endwhile; ?>
         </div>
-        <?php// endif ?>
     </section>
 </main>
 <?php

@@ -13,6 +13,7 @@
 
   &:only-child {
     width: fit-content;
+    cursor: default;
   }
 
   &:not(:only-child) {

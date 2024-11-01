@@ -393,6 +393,7 @@ a {
 }
 .principal__article:only-child {
   width: fit-content;
+  cursor: default;
 }
 .principal__article:not(:only-child):first-child, .principal__article:not(:only-child) + .principal__article {
   width: 300px;

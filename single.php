@@ -8,11 +8,17 @@
                 $sigle = substr($chaine,0,7);
                 $titre = substr($chaine, 8,stripos($chaine,"(")-8);
                 ?>
-        <h2><?=$titre?></h2>
+        <h2><?=$chaine?></h2>
         <div class="principal__conteneur">
             <article class="principal__article">
-                <h5><?= $sigle?></h5>
-                <p>Professeur : <?= get_field("professeur") ?> </p>
+                <h5><?= $chaine ?></h5>
+                <?php $professeur = get_field("professeur");
+                if ($professeur !== null){
+                    echo "<p>Professeur :" . $professeur . "</p>";
+                }else {
+                    echo "";
+                }
+                ?>
                 <p><?= get_the_content() ?></p>
                 <?php
                     $pos_ouvrante = stripos($chaine, "(");

@@ -19,9 +19,11 @@
                     $pos_ouvrante = stripos($chaine, "(");
                     if ($pos_ouvrante !== false) {
                         $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
+                    } else {
+                        $heureDemandé = "";
                     }
                 ?>
-                <small>(<?= $heureDemandé ?>)</small>
+                <small><?= $heureDemandé ?></small>
             </article>
             <?php endwhile; ?>
         </div>

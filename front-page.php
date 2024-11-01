@@ -30,7 +30,7 @@
                     <h5><?= $title ?></h5>
 
                     <small><strong><?= "" ?></strong></small>
-                    <p><?= wp_trim_words(get_the_excerpt(), 30, null); ?></p>
+                    <p><?= wp_trim_words(get_the_excerpt(), 50, null); ?></p>
                 </a>
             </article>
             <?php endwhile; ?>

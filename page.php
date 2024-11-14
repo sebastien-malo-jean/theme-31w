@@ -11,15 +11,8 @@
                 $titre = substr($chaine, 8,stripos($chaine,"(")-8);
             ?>
             <article class="principal__article">
-                <h5><a href="<?= the_permalink() ?>"><?= $sigle . " " . $titre ?></a></h5>
+                <h5><?=$chaine?></h5>
                 <p><?= the_content() ?></p>
-                <?php
-                    $pos_ouvrante = stripos($chaine, "(");
-                    if ($pos_ouvrante !== false) {
-                        $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
-                    }
-                ?>
-                <small>(<?= $heureDemandé ?>)</small>
             </article>
         </div>
     </section>

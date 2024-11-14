@@ -19,7 +19,7 @@
                     echo "";
                 }
                 ?>
-                <p><?= get_the_content() ?></p>
+                <p><?= the_content() ?></p>
                 <?php
                     $pos_ouvrante = stripos($chaine, "(");
                     if ($pos_ouvrante !== false) {

@@ -3,7 +3,7 @@
 ?>
 <main class="principal">
     <section class="global">
-        <h2>index</h2>
+        <!--h2>Page</h2!-->
         <div class="principal__conteneur">
             <?php
                 $chaine = get_the_title();

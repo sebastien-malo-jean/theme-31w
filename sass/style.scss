@@ -1,27 +1,38 @@
+// style.scss
+
 /*
 Theme Name: 31w
 Theme URI: none.
 Author: Sébastien Malo Jean
 Author URI: none
-Description:Un thème de base qui nous permettra d'apprendre les rudiments de la création de thème.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 31w
+Description: Un thème de base qui nous permettra d'apprendre les rudiments de la création de thème.
 */
 
-//_ --------------------------------------------- normalize _/
-@import "normalize/normalize";
-//_ --------------------------------------------- base _/
-@import "base/heading";
-@import "base/images";
-//_ --------------------------------------------- variables _/
-@import "variables/couleurs";
-//_ --------------------------------------------- composant _/
-@import "composants/bloc";
-@import "composants/navigation";
-@import "composants/navigation_footer";
-@import "composants/recherche";
-//_ --------------------------------------------- layout _/
-@import "layout/page";
+//@use directives en premier
+@use "normalize/normalize";
+@use "base/heading";
+@use "base/images";
+@use "variables/couleurs";
+@use "composants/entete";
+@use "composants/bloc";
+@use "composants/navigation";
+@use "composants/navigation_footer";
+@use "composants/recherche";
+@use "layout/page";
+
+// Maintenant, vous pouvez utiliser le mixin avec le namespace "couleurs"
+@include couleurs.applique_bg-color_color(
+  ".entete",
+  couleurs.$couleur1,
+  couleurs.$couleur2
+);
+@include couleurs.applique_bg-color_color(
+  ".principal",
+  couleurs.$couleur3,
+  couleurs.$couleur1
+);
+@include couleurs.applique_bg-color_color(
+  ".pied",
+  couleurs.$couleur1,
+  couleurs.$couleur2
+);

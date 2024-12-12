@@ -1,3 +1,4 @@
+@use "../variables/couleurs";
 //pagination GÉNÉRAL
 .global {
   max-width: 1100px;
@@ -6,8 +7,16 @@
   padding: 20px;
 }
 
-@include applique_bg-color_color(".entete", $couleur1, $couleur2);
-@include applique_bg-color_color(".principal", $couleur3, $couleur1);
+@include couleurs.applique_bg-color_color(
+  ".entete",
+  couleurs.$couleur1,
+  couleurs.$couleur2
+);
+@include couleurs.applique_bg-color_color(
+  ".principal",
+  couleurs.$couleur3,
+  couleurs.$couleur1
+);
 .pied {
   & .pied__global {
     display: flex;
@@ -54,4 +63,8 @@
   }
 }
 
-@include applique_bg-color_color(".pied", $couleur1, $couleur2);
+@include couleurs.applique_bg-color_color(
+  ".pied",
+  couleurs.$couleur1,
+  couleurs.$couleur2
+);

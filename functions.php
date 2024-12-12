@@ -11,9 +11,55 @@ function ajouter_styles() {
 
     add_action( 'wp_enqueue_scripts', 'ajouter_styles' );
 
-function ajout_options() {
-    add_theme_support('menus');
+function theme_31w_customize_register($wp_customize) {
+// Le code pour ajouter des sections, des réglages et des contrôles ira ici.
+$wp_customize->add_section('hero_section',
+array('title' => __('Hero Section', 'theme-31w'),
+ 'priority' => 30,
+));
+$wp_customize->add_setting('hero_title',
+array(
+
+'default' => __('Bienvenue sur mon site', 'theme-31w'),
+'sanitize_callback' => 'sanitize_text_field'));
+
+$wp_customize->add_control('hero_title', array(
+'label' => __('Hero Title', 'theme-31w'),
+'section' => 'hero_section',
+'type' => 'text',
+));
+$wp_customize->add_setting('hero_subtitle',
+array('default' => __('Your success starts here.', 'theme-31w'),
+'sanitize_callback' => 'sanitize_text_field', ));
+	
+$wp_customize->add_control('hero_subtitle',
+array( 'label' => __('Hero Subtitle', 'theme-31w'),
+'section' => 'hero_section', 'type' => 'text', ));
+$wp_customize->add_setting('hero_background', array( 'default' => "", 'sanitize_callback' => 'esc_url_raw', )); $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array( 'label' => __('Hero Background Image', 'theme-31w'), 'section' => 'hero_section', )));
+	
+$wp_customize->add_setting('hero_cta_text', array( 'default' => __('Learn More', 'theme-31w'), 'sanitize_callback' => 'sanitize_text_field', )); $wp_customize->add_control('hero_cta_text', array( 'label' => __('CTA Button Text', 'theme-31w'), 'section' => 'hero_section', 'type' => 'text', ));
+
+$wp_customize->add_setting('hero_cta_link',
+array( 'default' => '#',
+'sanitize_callback' => 'esc_url_raw', ));
+$wp_customize->add_control('hero_cta_link',
+array( 'label' => __('CTA Button Link', 'theme-31w'),
+'section' => 'hero_section', 'type' => 'url', ));
 }
+add_action('customize_register', 'theme_31w_customize_register');
+function ajout_options() {
+    // Activer le support des menus personnalisés
+    add_theme_support('menus');
+    add_theme_support('custom-logo', array(
+        'height'      => 250,
+        'width'       => 250,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+}
+add_action("after_setup_theme", "ajout_options");
+    
+
 
 add_action("after_setup_theme","ajout_options");
 
@@ -32,3 +78,5 @@ if ( $query->is_home() && $query->is_main_query() && ! is_admin() ) {
   }
  }
  add_action( 'pre_get_posts', 'modifie_requete_principal' );
+
+ 

@@ -36,7 +36,7 @@
                     </label>
                     <?php
                 wp_nav_menu(array(
-                                        "menu" => "menu",
+                                        "menu" => "header",
                                         "container" => "nav"
                                     )); ?>
                 </div>

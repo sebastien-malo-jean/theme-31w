@@ -59,10 +59,6 @@ function ajout_options() {
 }
 add_action("after_setup_theme", "ajout_options");
 
-
-
-// add_action("after_setup_theme","ajout_options");
-
 /**
  * Modifie la requete principale de WordPress avant qu'elle soit exécuté
  * le hook « pre_get_posts » se manifeste juste avant d'exécuter la requête principal

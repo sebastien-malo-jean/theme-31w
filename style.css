@@ -577,6 +577,17 @@ label[for=menu-toggle] {
   scale: 1 1;
 }
 
+.colonne1 p,
+.colonne1 h3 {
+  margin: 0;
+}
+.colonne1 h3 {
+  margin-bottom: 1rem;
+}
+.colonne1 p + p {
+  margin-top: 0.8rem;
+}
+
 .principal__recherche {
   border: 1px solid black;
   padding: 1rem;

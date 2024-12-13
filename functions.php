@@ -58,10 +58,10 @@ function ajout_options() {
     ));
 }
 add_action("after_setup_theme", "ajout_options");
-    
 
 
-add_action("after_setup_theme","ajout_options");
+
+// add_action("after_setup_theme","ajout_options");
 
 /**
  * Modifie la requete principale de WordPress avant qu'elle soit exécuté
@@ -72,7 +72,7 @@ add_action("after_setup_theme","ajout_options");
  */
 function modifie_requete_principal( $query ) {
 if ( $query->is_home() && $query->is_main_query() && ! is_admin() ) {
-  $query->set( 'category_name', 'cours' );
+  $query->set( 'category_name', 'favorites' );
   $query->set( 'orderby', 'title' );
   $query->set( 'order', 'ASC' );
   }

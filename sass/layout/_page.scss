@@ -4,7 +4,7 @@
   max-width: 1100px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
+  padding: 20px 60px 20px 20px;
 }
 
 @include couleurs.applique_bg-color_color(
@@ -16,6 +16,11 @@
   ".principal",
   couleurs.$couleur3,
   couleurs.$couleur1
+);
+@include couleurs.applique_bg-color_color(
+  ".pied",
+  couleurs.$couleur1,
+  couleurs.$couleur2
 );
 .pied {
   & .pied__global {
@@ -62,9 +67,3 @@
     }
   }
 }
-
-@include couleurs.applique_bg-color_color(
-  ".pied",
-  couleurs.$couleur1,
-  couleurs.$couleur2
-);

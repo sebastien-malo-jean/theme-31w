@@ -1,3 +1,65 @@
-section.global.entete__global {
+.entete__global {
   display: flex;
+}
+.entete__box {
+  flex-basis: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#menu-toggle {
+  display: none;
+}
+.menu-icon {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+label[for="menu-toggle"] {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#menu-toggle:checked ~ nav ul {
+  display: flex;
+}
+
+/* Styles optionnels pour l’icône lors du clic */
+#menu-toggle:checked + label .menu-icon:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle:checked + label .menu-icon:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + label .menu-icon:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.entete__nav {
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.entete__search_form {
+  justify-content: flex-end;
+}
+
+@media (min-width: 1000px) {
+  label[for="menu-toggle"] {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
 }

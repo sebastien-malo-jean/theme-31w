@@ -2,22 +2,23 @@
   display: flex;
   align-items: center;
 }
+
 .menu-menu-container {
-  width: 100%;
-  & .menu {
-    padding-inline-start: 0px;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
+  max-width: 100%;
+}
+
+.menu {
+  padding-inline-start: 0px;
+  display: none;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
 .menu-item {
   padding-inline-start: 0;
   display: flex;
   max-width: fit-content;
-
-  padding: 5px;
   text-align: center;
   & a {
     border-radius: 8px;
@@ -47,5 +48,11 @@
 
   & a:hover::after {
     scale: 1 1;
+  }
+}
+
+@media (min-width: 1000px) {
+  .menu {
+    display: flex;
   }
 }

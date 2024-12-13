@@ -23,17 +23,28 @@
                 echo '<a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
                 }
             ?>
-            <div class="entete__nav">
-                <?php
+            <div class="entete__box">
+                <div class="entete__nav">
+                    <!-- Checkbox pour gérer l’état du menu -->
+                    <input type="checkbox" id="menu-toggle">
+
+                    <!-- Label pour ouvrir/fermer le menu -->
+                    <label for="menu-toggle">
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                    </label>
+                    <?php
                 wp_nav_menu(array(
                                         "menu" => "menu",
                                         "container" => "nav"
                                     )); ?>
-            </div>
-            <div class="entete__search_form">
-                <?php
+                </div>
+                <div class="entete__search_form">
+                    <?php
                 get_search_form();
             ?>
+                </div>
             </div>
         </section>
     </header>

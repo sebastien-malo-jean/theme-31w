@@ -1,10 +1,75 @@
 @use "../variables/couleurs";
 //pagination GÉNÉRAL
 .global {
+  box-sizing: border-box;
   max-width: 1100px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px 60px 20px 20px;
+}
+
+.destinations-item:hover {
+  background-color: rgb(27, 27, 27, 0.6);
+  color: var(--couleur2);
+}
+
+.global.hero {
+  min-height: 80dvh;
+  max-width: 1520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filtrePost-content {
+  color: red;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+.destinations-item {
+  color: #1b1b1b;
+}
+.hero__contenu {
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & h1,
+  & p,
+  & a {
+    margin: 0;
+  }
+
+  & .hero__cta {
+    background-color: hsl(36, 100%, 90%, 0.6);
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: 600px;
+    font-size: large;
+    box-shadow: 3px 3px 3px #1b1b1b;
+  }
+  & h1 {
+    margin-bottom: 2rem;
+  }
+  & p {
+    margin-bottom: 1rem;
+  }
+}
+.hero-newsletter {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 40px;
+
+  & .hero-newsletter-form {
+    padding: 10px;
+    background-color: rgb(255, 235, 205, 0.6);
+    box-shadow: 3px 3px 3px #1b1b1b;
+  }
 }
 
 @include couleurs.applique_bg-color_color(

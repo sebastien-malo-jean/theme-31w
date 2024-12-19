@@ -11,7 +11,9 @@
                 $titre = substr($chaine, 8,stripos($chaine,"(")-8);
             ?>
             <article class="principal__article">
-                <h5><?=$chaine?></h5>
+                <?php
+                    $image = get_the_post_thumbnail(get_the_ID(), 'mini');
+                ?>
                 <p><?= the_content() ?></p>
             </article>
         </div>

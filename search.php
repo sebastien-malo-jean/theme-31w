@@ -9,19 +9,17 @@
             <?php while (have_posts()) : the_post() ?>
             <?php
                 $chaine = get_the_title();
-                $sigle = substr($chaine,0,7);
-                $titre = substr($chaine, 8,stripos($chaine,"(")-8);
             ?>
             <article class="principal__recherche">
                 <a href="<?= the_permalink() ?>" class="article-link">
-                    <h5><?= $sigle . " " . $titre ?></h5>
+                    <?php if (has_post_thumbnail()) : ?>
+                    <figure class="imgMEA">
+                        <?= get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
+                    </figure>
                     <?php
-                    $pos_ouvrante = stripos($chaine, "(");
-                    if ($pos_ouvrante !== false) {
-                        $heureDemandé = substr($chaine, $pos_ouvrante + 1, -1);
-                    }
-                ?>
-                    <small><strong>(<?= $heureDemandé ?>)</strong></small>
+                        endif;
+                    ?>
+                    <h5><?= $chaine ?></h5>
                     <p><?php  echo wp_trim_words(get_the_excerpt(), 80, null); ?></p>
                 </a>
             </article>

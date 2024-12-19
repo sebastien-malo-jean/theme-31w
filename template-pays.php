@@ -6,14 +6,6 @@ Template Name: Template Pays
 <?php
     get_header();
 ?>
-
-<section class="featured-article global">
-    <h2 class="featured-title"><?= esc_html(get_the_title()); ?></h2>
-    <div class="featured-content">
-
-    </div>
-</section>
-
 <?php
     // Requête pour l'article 196 (galerie)
     $featured_post = new WP_Query(array(

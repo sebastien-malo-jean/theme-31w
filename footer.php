@@ -25,7 +25,9 @@
             </div>
             <div class="colonne2">
                 <p>Auteur : Sébastien Malo Jean</p>
-                <a href="https://github.com/sebastien-malo-jean/theme-31w"><img class="pied__logo"
+                <a href="https://github.com/sebastien-malo-jean/theme-31w/tree/epreuveFinal"><img class="pied__logo"
+                        src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="github"></a>
+                <a href="https://github.com/sebastien-malo-jean/filtre-pays"><img class="pied__logo"
                         src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="github"></a>
                 <?php
                 if (function_exists('the_custom_logo')) {

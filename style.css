@@ -445,6 +445,18 @@ label[for=menu-toggle] {
   align-items: stretch;
 }
 
+.logo__box {
+  display: flex;
+}
+.logo__box a {
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.logo__box a *:hover {
+  background-color: rgba(27, 27, 27, 0.4);
+}
+
 .principal__conteneur.single {
   display: flex;
   flex-basis: 100%;

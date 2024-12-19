@@ -4,6 +4,17 @@
   gap: 20px;
   align-items: stretch;
 }
+.logo__box {
+  display: flex;
+  & a {
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    & *:hover {
+      background-color: rgb(27, 27, 27, 0.4);
+    }
+  }
+}
 
 .principal__conteneur.single {
   display: flex;
